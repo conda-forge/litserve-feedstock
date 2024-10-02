@@ -1,5 +1,5 @@
 {% set name = "litserve" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/litserve-{{ version }}.tar.gz
-  sha256: 5adeeb99c91877131bc5521e7f5bb6e9bfe8e0c95d556999373ccc698606fb16
+  sha256: 859ef36273f11150a7765cc40a3d3a2567f703131d9ad8bb54ef9d2f43996084
 
 build:
   noarch: python
