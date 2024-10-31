@@ -6,13 +6,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/litserve-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litserve-{{ version }}.tar.gz
   sha256: e422905f5ec994b548625491fb64dd77339167ea42b899c745177ffa55e4a09d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  entry_points:
+    - litserve = litserve.__main__:main
 
 requirements:
   host:
@@ -24,12 +26,13 @@ requirements:
     - python >=3.8
     - fastapi >=0.100
     - httpx
-    - uvicorn >=0.29.0
+    - uvicorn-standard >=0.29.0
 
 test:
   imports:
     - litserve
   commands:
+    - litserve -h
     - pip check
   requires:
     - pip
