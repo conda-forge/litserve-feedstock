@@ -1,5 +1,5 @@
 {% set name = "litserve" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litserve-{{ version }}.tar.gz
-  sha256: e422905f5ec994b548625491fb64dd77339167ea42b899c745177ffa55e4a09d
+  sha256: 25d3f624a30159afec0d77ff0f66671a5565e2d0c0383009238f00b084686eb1
 
 build:
   noarch: python
@@ -18,12 +18,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - wheel
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - fastapi >=0.100
     - httpx
     - uvicorn-standard >=0.29.0
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Lightning-AI/litserve
