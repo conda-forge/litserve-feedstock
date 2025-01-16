@@ -24,10 +24,8 @@ requirements:
     - pip
   run:
     - pyzmq >=22.0.0
-    - uvicorn >=0.29.0
     - python >={{ python_min }}
     - fastapi >=0.100
-    - httpx
     - uvicorn-standard >=0.29.0
 
 test:
