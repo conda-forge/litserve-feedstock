@@ -1,5 +1,5 @@
 {% set name = "litserve" %}
-{% set version = "0.2.11" %}
+{% set version = "0.2.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/litserve-{{ version }}.tar.gz
-  sha256: 3d3c159ebd3b77106c6756fa848f283c28f44c6a34f375b03c26d1597b1c5142
+  sha256: a427779e9310c94c3c036b8b8075538e299530800ee9e75b2a27b6437ad74c42
 
 build:
   noarch: python
@@ -23,6 +23,7 @@ requirements:
     - wheel
     - pip
   run:
+    - uvicorn >=0.29.0
     - pyzmq >=22.0.0
     - python >={{ python_min }}
     - fastapi >=0.100
