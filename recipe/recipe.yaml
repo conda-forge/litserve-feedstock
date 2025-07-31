@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: litserve
-  version: 0.2.14
+  version: "0.2.15"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/litserve-${{ version }}.tar.gz
-  sha256: be513b73a4d09b66f5a9608a2479e6d421af0a79e7b61fccb208c522253f990d
+  sha256: d8baebe1fed9a5a890098748796a7c4c0f0f2aa4508f8c2718c13fab83b761cb
 
 build:
   number: 0
