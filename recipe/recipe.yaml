@@ -28,7 +28,7 @@ requirements:
   run:
     - pyzmq >=22.0.0
     - python >=${{ python_min }}
-    - fastapi >=0.100
+    - fastapi >=0.112
     - uvicorn-standard >=0.29.0
 
 tests:
