@@ -29,13 +29,15 @@ requirements:
     - pyzmq >=22.0.0
     - python >=${{ python_min }}
     - fastapi >=0.112
-    - uvicorn >=0.29.0
+    - uvicorn-standard >=0.29.0
 tests:
   - python:
       imports:
         - litserve
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version: 
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
