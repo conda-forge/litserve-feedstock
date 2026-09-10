@@ -1,15 +1,14 @@
 schema_version: 1
 
 context:
-  name: litserve
   version: 0.2.19
 
 package:
-  name: ${{ name|lower }}
+  name: litserve
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/litserve-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/l/litserve/litserve-${{ version }}.tar.gz
   sha256: 951ee621b9f95888f9fc8d06707247ddf675227aa28d9407b6eb97c69551d3c5
 
 build:
@@ -29,7 +28,7 @@ requirements:
     - pyzmq >=22.0.0
     - python >=${{ python_min }}
     - fastapi >=0.112
-    - uvicorn >=0.29.0
+    - uvicorn-standard >=0.29.0
 tests:
   - python:
       imports:
